@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'redcarpet', '~> 3.4'
+gem 'pygments.rb', '~> 1.1', '>= 1.1.1'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
