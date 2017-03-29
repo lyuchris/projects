@@ -13,6 +13,7 @@ gem 'sqlite3'
 gem 'redcarpet', '~> 3.4'
 gem 'pygments.rb', '~> 1.1', '>= 1.1.1'
 gem 'friendly_id', '~> 5.2'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
