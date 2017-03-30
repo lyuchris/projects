@@ -13,12 +13,28 @@
   <body>
     <header id="main_navigation" class="clearfix">
     <%= link_to "Chris code", root_path, class: "name" %>
- 		<nav>
+ 		<ul>
+      <% if !current_user %>
+        <li><%= link_to("註冊", new_user_registration_path) %> </li>
+        <li><%= link_to("登入", new_user_session_path) %></li>
+      <% else %>
+        Hi!, <%= current_user.email %>
+        <li><%= link_to('修改個人資料', edit_registration_path(:user)) %> </li>
+        <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
+      <% end %>
+    </ul>
+    <nav>
  			<%= link_to "Articles", posts_path %>
  			<%= link_to "Projects", projects_path %>
  			<%= link_to "Contact", new_contact_path %>
  		</nav>
  	</header>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
       <footer id="main_footer">

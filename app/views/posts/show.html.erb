@@ -25,7 +25,11 @@
 	<hr>
 
 	<%= render 'disqus'%>
-   
+  
 </div>
-
+<% if current_user && current_user == @post.user %>
 <%= link_to "edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post),class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+
+

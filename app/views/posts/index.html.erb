@@ -6,9 +6,12 @@
 		<div class="post">
 			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
 			<h2><a href="#"><%= link_to post.title, post %></a></h2>
+			<p>Published at <%= time_ago_in_words(post.created_at) %></p>
+			<p>by <%= post.user.email %></p>
 			<hr>
 		</div>
 	<% end %>
+	<%= link_to("New Post", new_post_path, class: "btn btn-primary pull-right") %>
 </div>
 
 <%= will_paginate @posts %>
