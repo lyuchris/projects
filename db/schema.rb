@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330074327) do
+ActiveRecord::Schema.define(version: 20170330093412) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,13 +31,17 @@ ActiveRecord::Schema.define(version: 20170330074327) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "title"
     t.text     "content"
     t.string   "slug"
     t.integer  "user_id"
     t.integer  "category_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end

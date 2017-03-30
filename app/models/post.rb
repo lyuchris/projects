@@ -3,4 +3,7 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
   belongs_to :category
   belongs_to :user
+
+  has_attached_file :image, styles: { medium: "600x400>"}
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
