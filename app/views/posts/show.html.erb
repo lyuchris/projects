@@ -3,6 +3,8 @@
 	<header>
 		<p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
 		<h1><%= @post.title %></h1>
+		<p> 創新類別： <%= @post.category.try(:name) %></p>
+		
 		<hr>
 	</header>
 
@@ -11,6 +13,9 @@
 	</div>
 
 	<hr>
+
+	<p>Published at <%= time_ago_in_words(@post.created_at) %></p>
+    <p>by <%= @post.user.email %></p>
 
 	<div id="share_box">
 		<p>Share The DO List</p>
