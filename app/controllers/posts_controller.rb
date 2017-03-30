@@ -6,9 +6,14 @@ class PostsController < ApplicationController
 	  @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 2)
 	end
 
-    def show
+    # GET /posts/latest
+	def latest
+		@posts = Post.order("id DESC").limit(3)
+	end
+
+  def show
   	
-    end
+  end
 
 	def new
 		@post = current_user.posts.build

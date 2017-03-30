@@ -12,7 +12,10 @@
 			<hr>
 		</div>
 	<% end %>
-	<%= link_to("New Post", new_post_path, class: "btn btn-primary pull-right") %>
+	<div class="button_wrapper">
+	  <%= link_to("我有創新想法", new_post_path, :class =>"project_button") %>
+	  <%= link_to("Latest Posts list", latest_posts_path, :class =>"project_button") %>
+	</div>
 </div>
 
 <%= will_paginate @posts %>

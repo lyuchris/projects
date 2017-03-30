@@ -16,7 +16,11 @@ gem 'friendly_id', '~> 5.2'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'mail_form', '~> 1.6'
 gem 'devise', '~> 4.2', '>= 4.2.1'
-
+gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'paperclip', '~> 5.1'
+gem 'masonry-rails', '~> 0.2.4'
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
