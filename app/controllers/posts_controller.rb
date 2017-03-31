@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
     # GET /posts/latest
 	def latest
-		@posts = Post.order("id DESC").limit(3)
+		@posts = Post.order("id DESC").limit(10)
 	end
 
   def show

@@ -1,25 +1,26 @@
 
 <div class="wrapper wrapper_padding clearfix">
 	<div class="col-1 about homepage_content">
-		<h2>About</h2>
+		<h2>About Founder</h2>
 		<hr>
-		<p>哈囉，我是一個商務領域的專業工作者，專長是上市櫃公司財務報告編製及查核、內部控制遵循及Due Diligence Investigation。平常偶而會寫寫code。</p>
+		<p>哈囉，我是一個商務領域的專業工作者，專長是財務分析、上市櫃公司財務報告編製及查核、內部控制遵循及Due Diligence Investigation。平常偶而會寫寫code。</p>
 		<p>相關經驗請連接到我的<a href="https://www.linkedin.com/in/chris-lyu-5a6b75a8/" target="_blank">linkedin</a></p>
-		<p>You can find me speaking in 140 characters on Twitter, swooshing some pixels on Dribbble, and sharing some code on Github.</p>
+		<p>You can find me speaking in 140 characters on Twitter.</p>
 	</div>
 	<div class="col-2 homepage_content">
-		<h2>發表創新應用</h2>
+		<h2>創新應用文章</h2>
 		<hr>
 		<% @posts.each do |post| %>
 			<h3><a href="#"><%= link_to post.title, post %></a></h3>
 			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
 		<% end %>
 		<div class="">
-	      <%= link_to("Latest Posts list", latest_posts_path, :class =>"project_button") %>
+	      
+	      <%= link_to("我有創新想法", new_post_path, :class =>"project_button") %>
 	    </div>
 	</div>
 	<div class="col-3 homepage_content">
-		<h2>創新應用計畫</h2>
+		<h2>應用計畫</h2>
 		<hr>
 		<% @projects.each do |project| %>
 			<h3><a href="#"><%= link_to project.title, project %></a></h3>
