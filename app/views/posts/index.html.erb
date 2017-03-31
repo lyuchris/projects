@@ -1,5 +1,13 @@
 
 <h1 id="page_title">Articles</h1>
+<div>
+<%= link_to '標題排序', posts_path( :order => "title") %>
+<%= link_to '發布日期排序', posts_path %>
+<%= form_tag posts_path, :method => :get do %>
+  <%= text_field_tag "keyword" %>
+  <%= submit_tag "Search Title" %>
+<% end %>
+</div>
 
 <div id="posts_wrapper" class="skinny_wrapper">
 	<% @posts.each do |post| %>

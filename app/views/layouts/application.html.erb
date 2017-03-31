@@ -19,7 +19,8 @@
            <%= link_to("登入", new_user_session_path) %></p>
       <% else %>
         Hi!, <%= current_user.email %>
-        <p><%= link_to('修改個人資料', edit_registration_path(:user)) %> 
+        <p><%= link_to("My Posts", account_posts_path) %>
+           <%= link_to('修改個人資料', edit_registration_path(:user)) %> 
            <%= link_to("退出", destroy_user_session_path, method: :delete) %> </p>
       <% end %>
     

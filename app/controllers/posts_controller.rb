@@ -3,17 +3,27 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-	  @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 2)
-	end
-
+	  if params[:keyword]
+        @posts = Post.where( [ "title like ?", "%#{params[:keyword]}%" ] )
+      else
+	    @posts = Post.all
+	  end
+	  
+	  if params[:order]
+	  	sort_by = (params[:order] == 'title') ? 'title' : 'id'
+	  	@posts = @posts.order(sort_by)
+	  end
+	  
+	  @posts = @posts.all.order("created_at DESC").paginate(page: params[:page], per_page: 2)
+    end
     # GET /posts/latest
 	def latest
 		@posts = Post.order("id DESC").limit(10)
 	end
 
-  def show
+    def show
   	
-  end
+    end
 
 	def new
 		@post = current_user.posts.build

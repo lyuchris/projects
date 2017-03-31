@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   		get :latest
   	end
   end
+   
   resources :projects
   resources :contacts , only: [:new, :create]
+
+  namespace :account do
+    resources :posts
+  end
+  
   get 'welcome/index'
   root 'welcome#index'
 end
