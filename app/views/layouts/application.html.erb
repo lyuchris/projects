@@ -38,6 +38,11 @@
     <% end %>
 
     <%= yield %>
+    
+    <% if current_user && current_user.admin? %>
+      <%= link_to "admin", admin_posts_path %>
+    <% end -%>
+
       <footer id="main_footer">
     <p class="copyright">&copy;2017 INOceaner</p>
     <nav>
