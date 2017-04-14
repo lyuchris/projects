@@ -23,6 +23,9 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'paperclip', '~> 5.1'
 gem "stock_quote"
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+gem "mysql2"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
